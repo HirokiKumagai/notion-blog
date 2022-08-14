@@ -1,8 +1,6 @@
 import React, { FC, ReactNode } from "react";
+import { LayoutProps } from "../types/types";
 
-type LayoutProps = {
-  children?: ReactNode;
-}
 
 const Layout: FC<LayoutProps> = ({children}) => {
   return (
