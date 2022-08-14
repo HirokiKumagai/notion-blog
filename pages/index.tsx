@@ -6,7 +6,14 @@ import Layout from '../components/Layout'
 const Home: NextPage = () => {
   return (
     <div>
-      <Layout></Layout>
+      <Layout>
+        <div>
+          <h1>目指せスーパーエンジニア</h1>
+          <div>
+            {/* {記事を入れる} */}
+          </div>
+        </div>
+      </Layout>
     </div>
   )
 }
