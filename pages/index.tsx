@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { sampleCards } from '../utils/sample'
 import Layout from '../components/Layout'
+import Card from '../components/Card'
 
 const Home: NextPage = () => {
   return (
@@ -11,9 +12,9 @@ const Home: NextPage = () => {
         <div>
           <h1>目指せスーパーエンジニア</h1>
           <div>
-            {sampleCards.map((page, index) =>{
-              return (<p key= {index}>{page.name}</p>)
-            })}
+            {sampleCards.map((page, index)=>(
+              <Card key={index} page={page}/>
+            ))}
           </div>
         </div>
       </Layout>
