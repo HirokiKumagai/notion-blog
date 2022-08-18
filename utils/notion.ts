@@ -36,18 +36,28 @@ export const fetchPages = async ({ slug, tag, }: { slug?: string, tag?: string }
       }
     })
   }
-  return await notion.databases.query({
-    database_id: DATABASE_ID,
-    filter: {
-      and: and,
-    },
-    sorts: [
-      {
-        property: "published",
-        direction: "descending",
+
+  const data = [];
+  let cursor = undefined;
+  while (true) {
+    const { results, next_cursor }: any = await notion.databases.query({
+      database_id: DATABASE_ID,
+      start_cursor:  cursor,
+      filter: {
+        and: and,
       },
-    ],
-  });
+      sorts: [
+        {
+          property: "published",
+          direction: "descending",
+        },
+      ],
+    });
+    data.push(...results);
+    if (!next_cursor) break;
+    cursor = next_cursor;
+  }
+  return { results : data }
 };
 
 export const fetchBlocksByPageId = async (pageId: string) => {
