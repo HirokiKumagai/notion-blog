@@ -2,21 +2,23 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, {FC} from 'react'
 import { CardProps } from '../types/types'
+import { getCover, getDate, getMultiSelect, getText } from '../utils/property'
 
 const Card: FC<CardProps> = ({page}) => {
+
   return (
-    <Link href={`/articles/${page.slug}`}>
+    <Link href={`/articles/${getText(page.properties.slug.rich_text)}`}>
       <a>
         <div>
           <div>
-            <Image src={page.cover} alt="" objectFit='cover' width={100} height={100}/>
+            <Image src={getCover(page.cover)} alt="" objectFit='cover' width={100} height={100}/>
           </div>
           <div>
-            <h2>{page.name}</h2>
-            <p>{page.published}</p>
+            <h2>{getText(page.properties.name.title)}</h2>
+            <p>{getDate(page.properties.published.date)}</p>
           </div>
           <div>
-            {page.tags.map((tag, index) =>(
+            {getMultiSelect(page.properties.tags.multi_select).map((tag, index) =>(
               <span key={index}>{`#${tag}`}</span>
             ))}
           </div>
