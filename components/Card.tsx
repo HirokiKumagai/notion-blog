@@ -46,3 +46,5 @@ const Card: FC<CardProps> = ({ page }) => {
     </Link>
   );
 };
+
+export default Card;
