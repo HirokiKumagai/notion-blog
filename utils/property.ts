@@ -32,3 +32,11 @@ export const getMultiSelect = (multiSelect: [{ name: string }]) => {
   }
   return [];
 };
+
+export const getSelect = (select: {name: string }) => {
+  try {
+    return select.name;
+  } catch (error) {
+    console.error(error);
+  }
+}

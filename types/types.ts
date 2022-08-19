@@ -12,6 +12,7 @@ export type PageProps = {
   author: string;
   cover: string;
   published: string;
+  category: string;
   tags: string[];
   content: string;
 };
@@ -63,6 +64,7 @@ export type PropertyType = {
   published: { date: { start: string } };
   isPublic: { checkbox: boolean };
   tags: { multi_select: [{ name: string }] };
+  category: {select: { name: string } };
 };
 
 export type PageType = {
