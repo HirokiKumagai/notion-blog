@@ -7,7 +7,7 @@ import CardCategory from '../atoms/card/Category'
 import CardDate from '../atoms/card/Date'
 import CardImage from '../atoms/card/Image'
 import CardTitle from '../atoms/card/Title'
-import CardDetails from '../molecules/CardDetails'
+import CardMeta from '../molecules/CardMeta'
 import TagsSet from '../molecules/TagsSet'
 
 const Card: FC<CardProps> = ({ page }) => {
@@ -16,11 +16,11 @@ const Card: FC<CardProps> = ({ page }) => {
       <a className="flex justify-center ">
         <div className="max-w-sm rounded overflow-hidden shadow-lg w-full my-4 md:my-0 content-between grid">
           <CardImage src={getCover(page.cover)}/>
-          <CardDetails>
+          <CardMeta>
             <CardCategory name={getSelect(page.properties.category.select)}/>
             <CardTitle name={getText(page.properties.name.title)}/>
             <CardDate date={getDate(page.properties.published.date)}/>
-          </CardDetails>
+          </CardMeta>
           <TagsSet tags={getMultiSelect(page.properties.tags.multi_select)}/>
         </div>
       </a>

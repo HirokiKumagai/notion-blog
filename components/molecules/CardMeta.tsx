@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { LayoutProps } from "../../types/props/types";
 
-const CardDetails: FC<LayoutProps> = ({children}) => {
+const CardMeta: FC<LayoutProps> = ({children}) => {
   return(
     <div className="px-6 pt-4 ">
       {children}
@@ -9,4 +9,4 @@ const CardDetails: FC<LayoutProps> = ({children}) => {
   );
 };
 
-export default CardDetails;
+export default CardMeta;

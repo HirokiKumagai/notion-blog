@@ -4,9 +4,10 @@ import {
   NextPage,
 } from "next";
 import React from "react";
-import ArticleMeta from "../../components/molecules/ArticleMeta";
+import ArticleMeta from "../../components/organisms/ArticleMeta";
 import Layout from "../../components/templates/Layout";
-import { ArticleProps, Params } from "../../types/props/types";
+import { ArticleProps } from "../../types/props/types";
+import { Params } from "../../types/types/types";
 import { fetchBlocksByPageId, fetchPages } from "../../utils/notion";
 import { getText } from "../../utils/property";
 import NotionBlocks from "notion-block-renderer";
