@@ -45,12 +45,11 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
   return (
     <Layout>
-      <article>
-        <div>
+      <article className="w-full">
+        <div className="my-12">
           <ArticleMeta page={page} />
         </div>
-
-        <div>
+        <div className="my-12">
           <NotionBlocks blocks={blocks} isCodeHighlighter={true} />
         </div>
       </article>
