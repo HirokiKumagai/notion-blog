@@ -1,8 +1,8 @@
 import type { GetStaticProps, NextPage } from 'next'
-import Layout from '../components/Layout'
-import Card from '../components/Card'
+import Layout from '../components/templates/Layout'
+import Card from '../components/organisms/Card'
 import { fetchPages } from '../utils/notion'
-import { IndexProps } from '../types/types'
+import { IndexProps } from '../types/props/types'
 
 export const getStaticProps: GetStaticProps = async () => {
   const { results } = await fetchPages({});

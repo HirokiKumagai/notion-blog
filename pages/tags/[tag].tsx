@@ -2,9 +2,9 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import Card from "../../components/Card";
-import Layout from "../../components/Layout";
-import { IndexProps, Params, TagProps } from "../../types/types";
+import Card from "../../components/organisms/Card";
+import Layout from "../../components/templates/Layout";
+import { IndexProps, Params, TagProps } from "../../types/props/types";
 import { fetchPages } from "../../utils/notion";
 import { getMultiSelect } from "../../utils/property";
 
