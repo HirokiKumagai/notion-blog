@@ -36,7 +36,6 @@ const ArticleMeta: FC<ArticleMetaProps> = ({ page }) => {
           {/* tags */}
           <div className="col-span-1">Tags</div>
           <div className="col-span-2">
-            {/* change later */}
             {getMultiSelect(page.properties.tags.multi_select).map(
               (tag: string, index: number) => (
                 <Link key={index} href={`/tags/${tag}`}>
