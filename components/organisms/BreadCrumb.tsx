@@ -6,7 +6,7 @@ const Breadcrumb = () => {
   const router = useRouter();
   let joinedPath = "";
   return (
-    <>
+    <div className="font-bold leading-6 text-gray-500 mt-4">
       {router.asPath.split("/").map((path, index) => {
         if (path) {
           joinedPath += path + "/";
@@ -19,7 +19,7 @@ const Breadcrumb = () => {
           );
         }
       })}
-    </>
+    </div>
   );
 };
 
