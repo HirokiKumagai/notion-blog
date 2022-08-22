@@ -6,7 +6,8 @@ import NavLogo from '../organisms/NavLogo'
 import { classNames } from '../../utils/headlessUI'
 
 const navigation = [
-  { name: 'HOME', href: '/', current: true },
+  { name: 'HOME', href: '/', current: false },
+  { name: 'TAGS', href: '/tags', current: false },
 ]
 export default function Nav() {
   return (
@@ -31,11 +32,9 @@ export default function Nav() {
                 <NavMenu navigation={navigation}/>
               </div>
               {/* Profile dropdown */}
-
               <NavProfile/>
             </div>
           </div>
-
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (

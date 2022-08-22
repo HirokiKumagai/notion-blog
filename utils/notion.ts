@@ -74,3 +74,13 @@ export const fetchBlocksByPageId = async (pageId: string) => {
   }
   return { results: data };
 };
+
+export const fetchTags = async () => {
+  const pagesData = await fetchPages({});
+  let tagsData = pagesData.results.map((page) =>{
+    return(page.properties.tags.multi_select);
+  })
+  tagsData = [].concat(...tagsData);
+  let results = new Set(tagsData.map((tagData) => {return tagData.name}));
+  return Array.from(results);
+}
