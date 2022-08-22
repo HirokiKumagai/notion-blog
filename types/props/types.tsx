@@ -2,7 +2,6 @@
 import { ReactNode } from "react";
 import { BlockType } from "notion-block-renderer";
 import { PageType } from "../types/types";
-import { type } from "os";
 
 export type ArticleProps = {
   page: PageType;
@@ -26,6 +25,10 @@ export type GridHeaderProps = {name: string};
 export type GridContentProps = {context: string | undefined};
 
 export type IndexProps = { pages: PageType[] };
+
+export type NavMenuProps = {
+  navigation: {name: string, href: string, current: boolean}[]
+}
 
 export type TagProps = IndexProps & { tag: string };
 export type TagsSetProps = {tags: string[]}

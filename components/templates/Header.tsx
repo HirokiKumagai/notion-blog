@@ -1,11 +1,12 @@
 import React from 'react'
+import Nav from './Nav'
 import Breadcrumb from '../organisms/BreadCrumb'
 
 const Header = () => {
   return (
     <header>
-      <h1>目指せスーパーエンジニア</h1>
-      <Breadcrumb/>
+      <Nav/>
+      {/* <Breadcrumb/> */}
     </header>
   )
 }
