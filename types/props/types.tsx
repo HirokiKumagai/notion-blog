@@ -35,7 +35,7 @@ export type NavMenuProps = {
 export type TagProps = IndexProps & { tag: string };
 export type TagsIndexProps = {tags: string[]};
 export type TagsSetProps = {tags: string[]};
-export type TagElementProps = { key: number, tag: string};
+export type TagElementProps = { index: number, tag: string};
 
 export type PageProps = {
   slug: string;

@@ -7,7 +7,7 @@ const TagsSet: FC<TagsSetProps> = ({tags}) => {
     <div className="px-6 pb-4 flex flex-wrap">
       {tags.map(
         (tag, index) => {
-          return <TagElement key={index} tag={tag}/>;
+          return <TagElement index={index} tag={tag}/>;
         }
       )}
     </div>
