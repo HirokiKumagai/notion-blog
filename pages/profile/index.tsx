@@ -6,6 +6,14 @@ import GridTwoCol from '../../components/molecules/GridTwoCol'
 import Link from 'next/link'
 
 const ProfileIndex: NextPage<IndexProps> = ({pages}) => {
+  const metaData ={
+    pageTitle: "hkumagaiの紹介ページ",
+    pageDescription: "目指せスーパーエンジニアBlogを作成しているhkumagaiを紹介するページです。",
+    pagePath: "/profile",
+    pageImg: "",
+    pageImgWidth: 1280,
+    pageImgHeight: 640
+  }
   return (
     <div>
       <Layout>

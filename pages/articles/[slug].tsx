@@ -44,8 +44,16 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 };
 
 const Article: NextPage<ArticleProps> = ({ page, blocks }) => {
+  const metaData ={
+    pageTitle: getText(page.properties.name.title),
+    pageDescription: getText(page.properties.description.rich_text),
+    pagePath: "/",
+    pageImg: "/kuma_noidea.png",
+    pageImgWidth: 1280,
+    pageImgHeight: 640
+  }
   return (
-    <Layout>
+    <Layout metaData={metaData}>
       <article className="w-full">
         <div className="my-12">
           <ArticleMeta page={page} />

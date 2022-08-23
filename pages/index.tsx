@@ -14,9 +14,17 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 }
 const Home: NextPage<IndexProps> = ({pages}) => {
+  const metaData ={
+    pageTitle: "TOPページ",
+    pageDescription: "目指せスーパーエンジニアBlogのTOPページ",
+    pagePath: "/",
+    pageImg: "/kuma_noidea.png",
+    pageImgWidth: 1280,
+    pageImgHeight: 640
+  }
   return (
     <div>
-      <Layout>
+      <Layout metaData={metaData}>
         <section className="text-gray-600 body-font">
             <div className="grid md:gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3 w-full my-12">
               {pages.map((page, index)=>(

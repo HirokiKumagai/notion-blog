@@ -43,8 +43,16 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 };
 
 const Tag: NextPage<TagProps> = ({ pages, tag }) => {
+  const metaData ={
+    pageTitle: `${tag}のtagを持った記事一覧`,
+    pageDescription: `目指せスーパーエンジニアBlogの${tag}のtagを持った記事一覧を表示するページです。`,
+    pagePath: `/tags/${tag}`,
+    pageImg: "",
+    pageImgWidth: 1280,
+    pageImgHeight: 640
+  }
   return (
-    <Layout>
+    <Layout metaData={metaData}>
       <div>
         <h1 className="mt-10">{`${tag}`}</h1>
         <section className="text-gray-600 body-font">
