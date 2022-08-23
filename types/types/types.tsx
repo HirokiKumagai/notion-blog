@@ -4,6 +4,15 @@ export type Params = ParsedUrlQuery & {
   tag?: string;
 };
 
+export type MetaDataType = {
+  pageTitle?: string
+  pageDescription?: string
+  pagePath?: string
+  pageImg?: string
+  pageImgWidth?: number
+  pageImgHeight?: number
+}
+
 export type FileType = {
   file?: { url: string };
   external?: { url: string };

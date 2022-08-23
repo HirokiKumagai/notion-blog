@@ -1,7 +1,7 @@
 
 import { ReactNode } from "react";
 import { BlockType } from "notion-block-renderer";
-import { PageType } from "../types/types";
+import { MetaDataType, PageType } from "../types/types";
 
 export type ArticleProps = {
   page: PageType;
@@ -9,8 +9,10 @@ export type ArticleProps = {
 };
 
 export type ArticleMetaProps = CardProps;
+
 export type LayoutProps = {
   children: ReactNode;
+  metaData?: MetaDataType
 };
 
 export type BlockProps = { block: BlockType };
