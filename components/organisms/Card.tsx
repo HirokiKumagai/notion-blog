@@ -14,7 +14,7 @@ const Card: FC<CardProps> = ({ page }) => {
   return (
     <Link href={`/articles/${getText(page.properties.slug.rich_text)}`}>
       <a className="flex justify-center ">
-        <div className="max-w-sm rounded overflow-hidden shadow-lg w-full my-4 md:my-0 content-between grid">
+        <div className="max-w-sm rounded overflow-hidden shadow-lg w-full my-4 md:my-0 content-start grid">
           <CardImage src={getCover(page.cover)}/>
           <CardMeta>
             <CardCategory name={getSelect(page.properties.category.select)}/>
