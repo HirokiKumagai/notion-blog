@@ -49,3 +49,6 @@ export type PageType = {
   cover: FileType | null;
   properties: PropertyType;
 };
+export type WithNonceProp = {
+  nonce: string;
+};
