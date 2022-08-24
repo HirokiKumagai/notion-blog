@@ -7,7 +7,7 @@ import TagElement from '../components/atoms/TagElement';
 type Props = { nowDate: string; pageTitle: string; tags: any[]};
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  const results = await fetchTags()
+  const results = ["test1", "test2", "test3"]
   return {
     props: {
       nowDate: new Date().toLocaleString(),
