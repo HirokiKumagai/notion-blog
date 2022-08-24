@@ -13,7 +13,7 @@ export default function ISRDemo(props: Props) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main></main>
+      <main>
         <h2>{props.pageTitle}</h2>
         <p>What time is it now?</p>
         <p>It&apos;s {props.nowDate}.</p>
