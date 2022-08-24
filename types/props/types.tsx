@@ -26,7 +26,7 @@ export type CardDateProps = {date: string | undefined};
 export type GridHeaderProps = {name: string};
 export type GridContentProps = {context: string | undefined};
 
-export type IndexProps = { pages: PageType[] };
+export type IndexProps = { pages: PageType[], timestamp: number };
 
 export type NavMenuProps = {
   navigation: {name: string, href: string, current: boolean}[]
