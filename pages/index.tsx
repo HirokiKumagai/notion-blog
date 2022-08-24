@@ -9,12 +9,11 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       pages: results? results : [],
-      timestamp: new Date().getTime(),
     },
-    revalidate: 15,
+    revalidate: 10,
   };
 }
-const Home: NextPage<IndexProps> = ({pages, timestamp}) => {
+const Home: NextPage<IndexProps> = ({pages}) => {
   const metaData ={
     pageTitle: "TOPページ",
     pageDescription: "目指せスーパーエンジニアBlogのTOPページ",
@@ -27,7 +26,6 @@ const Home: NextPage<IndexProps> = ({pages, timestamp}) => {
     <div>
       <Layout metaData={metaData}>
         <section className="text-gray-600 body-font">
-          <p> time: {timestamp}</p>
             <div className="grid md:gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3 w-full my-12">
               {pages.map((page, index)=>(
                 <Card key={index} page={page}/>
