@@ -1,18 +1,18 @@
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { fetchTags } from '../utils/notion';
+// import { fetchTags } from '../utils/notion';
 import TagElement from '../components/atoms/TagElement';
+import { fetchTags } from '../utils/notion';
 
 type Props = { nowDate: string; pageTitle: string; tags: any[]};
 
 export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  const results = ["test1", "test2", "test3"]
   return {
     props: {
       nowDate: new Date().toLocaleString(),
       pageTitle: 'ISR Demo',
-      tags: results,
+      tags: await fetchTags(),
     },
     revalidate: 5, // ISR settings
   };
