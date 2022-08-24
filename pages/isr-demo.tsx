@@ -1,8 +1,22 @@
 import Head from 'next/head';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
+import { fetchTags } from '../utils/notion';
+import TagElement from '../components/atoms/TagElement';
 
-type Props = { nowDate: string; pageTitle: string };
+type Props = { nowDate: string; pageTitle: string; tags: any[]};
+
+export const getStaticProps: GetStaticProps<Props> = async (context) => {
+  const results = await fetchTags()
+  return {
+    props: {
+      nowDate: new Date().toLocaleString(),
+      pageTitle: 'ISR Demo',
+      tags: results,
+    },
+    revalidate: 5, // ISR settings
+  };
+};
 
 export default function ISRDemo(props: Props) {
   return (
@@ -22,17 +36,14 @@ export default function ISRDemo(props: Props) {
             <a>Go back</a>
           </Link>
         </p>
+        {props.tags.map((tag, index) => {
+          return (
+            <Link key={index} href={`/tags/${tag}`}>
+              <a><TagElement key={index} tag={tag}/></a>
+            </Link>
+          )
+        })}
       </main>
     </div>
   );
 }
-
-export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  return {
-    props: {
-      nowDate: new Date().toLocaleString(),
-      pageTitle: 'ISR Demo',
-    },
-    revalidate: 5, // ISR settings
-  };
-};
